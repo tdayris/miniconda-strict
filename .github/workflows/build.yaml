@@ -31,5 +31,6 @@ jobs:
           context: .
           push: true
           tags: user/app:latest
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }}
+          github-token: ${{ secrets.SECRET_TOKEN }}
+          # secrets: |
+            # GIT_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }}
