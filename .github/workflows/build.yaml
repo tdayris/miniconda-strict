@@ -17,19 +17,22 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Log in to the Container registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.SECRET_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
-          context: ./
-          push: true
+          image: minoconda_strict
+          registry: ${{ env.REGISTRY }}
+          pushImage: true
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKER_PASS }}
           file: ./Dockerfile
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
