@@ -29,9 +29,10 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: "{{defaultContext}}:."
+          context: .
           push: true
+          # file: ./Dockerfile
           tags: user/app:latest
           github-token: ${{ secrets.SECRET_TOKEN }}
-          # secrets: |
-            # GIT_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }}
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }}
