@@ -19,13 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Log in to the Container registry
-        uses: docker/login-action@v2
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.SECRET_TOKEN }}
-
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
