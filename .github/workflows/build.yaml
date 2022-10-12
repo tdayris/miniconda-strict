@@ -32,7 +32,7 @@ jobs:
           context: .
           push: true
           file: ./Dockerfile
-          tags: user/app:latest ${{ env.VERSION }}
+          tags: user/app:latest
           github-token: ${{ secrets.SECRET_TOKEN }}
           # secrets: |
             # GIT_AUTH_TOKEN=${{ secrets.SECRET_TOKEN }}
