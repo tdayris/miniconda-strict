@@ -31,5 +31,5 @@ jobs:
         with:
           context: ./
           push: true
-          file: ./minoconda-strict/Dockerfile
+          file: ./Dockerfile
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
