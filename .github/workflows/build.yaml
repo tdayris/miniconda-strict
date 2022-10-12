@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.SECRET_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: minoconda_strict
           registry: ${{ env.REGISTRY }}
