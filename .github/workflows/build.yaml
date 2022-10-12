@@ -29,9 +29,9 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: minoconda-strict
           push: true
-          file: ./Dockerfile
+          # file: ./Dockerfile
           tags: user/app:latest
           github-token: ${{ secrets.SECRET_TOKEN }}
           secrets: |
