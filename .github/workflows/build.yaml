@@ -30,8 +30,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          context: .
-          file: ./Dockerfile
+          context: ./alpine
           tags: user/app:latest
           github-token: ${{ secrets.SECRET_TOKEN }}
           secrets: |
